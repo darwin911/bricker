@@ -23,6 +23,10 @@ export default class Paddle {
     this.speed = this.maxSpeed;
   }
 
+  stop() {
+    this.speed = 0;
+  }
+
   draw(context) {
     context.fillStyle = colors.brickRed;
     context.fillRect(this.position.x, this.position.y, this.width, this.height);
