@@ -12,16 +12,16 @@ export default class Game {
     this.ball = new Ball(this);
     this.paddle = new Paddle(this);
 
+    this.gameObjects = [this.ball, this.paddle];
+
     new InputHandler(this.paddle);
   }
 
   update(deltaTime) {
-    this.paddle.update(deltaTime);
-    this.ball.update(deltaTime);
+    this.gameObjects.forEach((object) => object.update(deltaTime));
   }
 
   draw(context) {
-    this.paddle.draw(context);
-    this.ball.draw(context);
+    this.gameObjects.forEach((object) => object.draw(context));
   }
 }
