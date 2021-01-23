@@ -11,9 +11,11 @@ let paddle = new Paddle(GAME_WIDTH, GAME_HEIGHT);
 
 paddle.draw(context);
 
+new InputHandler(paddle);
+
 let lastTime = 0;
 
-new InputHandler(paddle);
+let ballElement = document.getElementById('ball');
 
 function gameLoop(timeStamp) {
   let deltaTime = timeStamp - lastTime;
@@ -22,6 +24,8 @@ function gameLoop(timeStamp) {
   context.clearRect(0, 0, 800, 600);
   paddle.update(deltaTime);
   paddle.draw(context);
+
+  context.drawImage(ballElement, 10, 10, 16, 16);
 
   requestAnimationFrame(gameLoop);
 }
