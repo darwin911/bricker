@@ -1,14 +1,14 @@
 const colors = { brickRed: '#843F33', brickAlt: '#CE2427' };
 
 export default class Paddle {
-  constructor(gameWidth, gameHeight) {
-    this.gameWidth = gameWidth;
+  constructor(game) {
+    this.gameWidth = game.gameWidth;
     this.width = 150;
     this.height = 16;
 
     this.position = {
-      x: gameWidth / 2 - this.width / 2,
-      y: gameHeight - this.height - 10,
+      x: game.gameWidth / 2 - this.width / 2,
+      y: game.gameHeight - this.height - 10,
     };
 
     this.maxSpeed = 8;
