@@ -15,4 +15,8 @@ export default class Paddle {
     context.fillStyle = colors.brickRed;
     context.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
+
+  update(deltaTime) {
+    this.position.x += 5 / deltaTime;
+  }
 }
