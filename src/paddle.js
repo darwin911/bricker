@@ -32,8 +32,7 @@ export default class Paddle {
     context.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
 
-  update(deltaTime) {
-    if (!deltaTime) return;
+  update() {
     if (this.position.x <= 0) {
       this.position.x = 0;
     }
